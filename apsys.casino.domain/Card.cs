@@ -23,8 +23,8 @@ namespace apsys.casino.domain
 
         public void SetMockData()
         {
-            this.Suit = SuitConstats.Diamonds;
-            this.Value = "1";
+            Suit = SuitConstats.Diamonds;
+            Value = "1";
         }
     }
 }

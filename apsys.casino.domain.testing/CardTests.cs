@@ -61,5 +61,25 @@ namespace apsys.casino.domain.testing
             // Assert 
             Assert.IsTrue(result);           
         }
+
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase("  ")]
+        [TestCase("0")]
+        [TestCase("j")]
+        [TestCase("q")]
+        [TestCase("k")]
+        [TestCase("-")]
+        public void IsValid_InvalidValue_ReturnFalse(string value)
+        {
+            // Arrange
+            Card card = new Card();
+            card.SetMockData();
+            card.Value = value;
+            // Act
+            bool result = card.IsValid();
+            // Assert
+            Assert.IsFalse(result);
+        }
     }
 }
