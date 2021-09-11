@@ -5,6 +5,15 @@ namespace apsys.casino.domain.testing
 {
     class CardTests
     {
+        Card ClassUnderTest { get; set; }
+
+        [SetUp]
+        public void SetUp()
+        {
+            ClassUnderTest = new Card();
+            ClassUnderTest.SetMockData();
+        }
+
         [TestCase(SuitConstats.Diamonds)]
         [TestCase(SuitConstats.Spades)]
         [TestCase(SuitConstats.Clubs)]
@@ -12,11 +21,9 @@ namespace apsys.casino.domain.testing
         public void IsValid_ValidSuit_ReturnTrue(string suit)
         {
             // Arrange
-            Card card = new Card();
-            card.SetMockData();
-            card.Suit = suit;
+            ClassUnderTest.Suit = suit;
             // Act
-            bool result = card.IsValid();
+            bool result = ClassUnderTest.IsValid();
             // Assert
             Assert.IsTrue(result);
         }
@@ -28,11 +35,9 @@ namespace apsys.casino.domain.testing
         public void IsValid_InvalidSuit_ReturnFalse(string suit)
         {
             // Arrange
-            Card card = new Card();
-            card.SetMockData();
-            card.Suit = suit;
+            ClassUnderTest.Suit = suit;
             // Act
-            bool result = card.IsValid();
+            bool result = ClassUnderTest.IsValid();
             // Assert
             Assert.IsFalse(result);
         }
@@ -53,11 +58,9 @@ namespace apsys.casino.domain.testing
         public void IsValid_ValidValue_ReturnTrue(string value)
         {
             // Arrange
-            Card card = new Card();
-            card.SetMockData();
-            card.Value = value;
+            ClassUnderTest.Value = value;
             // Act
-            bool result = card.IsValid();
+            bool result = ClassUnderTest.IsValid();
             // Assert 
             Assert.IsTrue(result);           
         }
@@ -73,11 +76,9 @@ namespace apsys.casino.domain.testing
         public void IsValid_InvalidValue_ReturnFalse(string value)
         {
             // Arrange
-            Card card = new Card();
-            card.SetMockData();
-            card.Value = value;
+            ClassUnderTest.Value = value;
             // Act
-            bool result = card.IsValid();
+            bool result = ClassUnderTest.IsValid();
             // Assert
             Assert.IsFalse(result);
         }
