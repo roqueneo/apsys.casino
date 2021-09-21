@@ -10,11 +10,11 @@ namespace apsys.casino.domain
         public string Value { get; set; }
 
         public bool IsValid()
-            => CardConstats.GetAllValidSuits().Contains(Suit) && CardConstats.GetAllValidValues().Contains(Value);
+            => CardConstants.GetAllValidSuits().Contains(Suit) && CardConstants.GetAllValidValues().Contains(Value);
 
         public void SetMockData()
         {
-            Suit = CardConstats.Diamonds;
+            Suit = CardConstants.Diamonds;
             Value = "1";
         }
     }

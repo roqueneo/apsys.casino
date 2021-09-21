@@ -14,10 +14,10 @@ namespace apsys.casino.domain.testing
             ClassUnderTest.SetMockData();
         }
 
-        [TestCase(CardConstats.Diamonds)]
-        [TestCase(CardConstats.Spades)]
-        [TestCase(CardConstats.Clubs)]
-        [TestCase(CardConstats.Hearts)]
+        [TestCase(CardConstants.Diamonds)]
+        [TestCase(CardConstants.Spades)]
+        [TestCase(CardConstants.Clubs)]
+        [TestCase(CardConstants.Hearts)]
         public void IsValid_ValidSuit_ReturnTrue(string suit)
         {
             // Arrange

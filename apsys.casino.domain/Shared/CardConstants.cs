@@ -4,7 +4,7 @@ using System.Text;
 
 namespace apsys.casino.domain.Shared
 {
-    public static class CardConstats
+    public static class CardConstants
     {
         // Suit contansts
         public const string Diamonds = "DIAMONDS";
@@ -16,6 +16,8 @@ namespace apsys.casino.domain.Shared
         {
             return new string[] { Diamonds, Spades, Clubs, Hearts };
         }
+
+        public static string[] ValidSuits = new string[] { Diamonds, Spades, Clubs, Hearts };
 
         // Value constants
         public const string V01 = "1";
