@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace apsys.casino.domain
 {
@@ -13,7 +14,10 @@ namespace apsys.casino.domain
 
         public bool IsValid()
         {
-            if (string.IsNullOrWhiteSpace(NickName) || NickName.Trim().Length < 3)
+            if (string.IsNullOrWhiteSpace(NickName))
+                return false;
+            string nickName = NickName.Replace(" ", string.Empty);
+            if (nickName.Length < 3 || !char.IsLetter(nickName.FirstOrDefault()))
                 return false;
 
             return true;

@@ -22,9 +22,13 @@ namespace apsys.casino.domain.testing
         [TestCase("a")]
         [TestCase("a  ")]
         [TestCase("ab")]
+        [TestCase("a b")]
         [TestCase("ab ")]
         [TestCase(" ab")]
         [TestCase("  ab")]
+        [TestCase("---")]
+        [TestCase("- -")]
+        [TestCase("01a")]
         public void IsValid_InvalidNickName_ReturnFalse(string nickName)
         {
             // Arrange
@@ -33,6 +37,22 @@ namespace apsys.casino.domain.testing
             ClassUnderTest.NickName = nickName;
             // Act and Assert
             Assert.IsFalse(ClassUnderTest.IsValid());
+        }
+
+        [TestCase("abc")]
+        [TestCase(" abc ")]
+        [TestCase(" abc")]
+        [TestCase("abc ")]
+        [TestCase("a01")]
+        [TestCase("pepe")]
+        public void IsValid_ValidNickName_ReturnTrue(string nickName)
+        {
+            // Arrange
+            ClassUnderTest = new Player();
+            ClassUnderTest.SetMockData();
+            ClassUnderTest.NickName = nickName;
+            // Act and Assert
+            Assert.IsTrue(ClassUnderTest.IsValid());
         }
 
     }
