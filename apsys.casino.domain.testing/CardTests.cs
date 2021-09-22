@@ -5,7 +5,7 @@ namespace apsys.casino.domain.testing
 {
     class CardTests
     {
-        Card ClassUnderTest { get; set; }
+        internal Card ClassUnderTest { get; set; }
 
         [SetUp]
         public void SetUp()

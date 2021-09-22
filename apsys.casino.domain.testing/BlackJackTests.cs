@@ -1,9 +1,7 @@
 ﻿using apsys.casino.domain.Shared;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace apsys.casino.domain.testing
 {
