@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace apsys.casino.domain
 {
-    public class Player
+    public class Player : ITesteable
     {
         public string NickName { get; set; }
 

@@ -2,16 +2,13 @@
 
 namespace apsys.casino.domain.testing
 {
-    class PlayerTests
+    class PlayerTests : UnitaryTestBase<Player>
     {
-        internal Player ClassUnderTest { get; set; }
-
         [Test]
         public void IsValid_ValidInstance_ReturnTrue()
         {
             // Arrange
-            ClassUnderTest = new Player();
-            ClassUnderTest.SetMockData();
+            // ... nothing code
             // Act and Assert
             Assert.IsTrue(ClassUnderTest.IsValid());
         }
@@ -32,8 +29,6 @@ namespace apsys.casino.domain.testing
         public void IsValid_InvalidNickName_ReturnFalse(string nickName)
         {
             // Arrange
-            ClassUnderTest = new Player();
-            ClassUnderTest.SetMockData();
             ClassUnderTest.NickName = nickName;
             // Act and Assert
             Assert.IsFalse(ClassUnderTest.IsValid());
@@ -48,8 +43,6 @@ namespace apsys.casino.domain.testing
         public void IsValid_ValidNickName_ReturnTrue(string nickName)
         {
             // Arrange
-            ClassUnderTest = new Player();
-            ClassUnderTest.SetMockData();
             ClassUnderTest.NickName = nickName;
             // Act and Assert
             Assert.IsTrue(ClassUnderTest.IsValid());

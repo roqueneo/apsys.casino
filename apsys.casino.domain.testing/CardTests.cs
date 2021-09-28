@@ -3,17 +3,8 @@ using NUnit.Framework;
 
 namespace apsys.casino.domain.testing
 {
-    class CardTests
+    class CardTests : UnitaryTestBase<Card>
     {
-        internal Card ClassUnderTest { get; set; }
-
-        [SetUp]
-        public void SetUp()
-        {
-            ClassUnderTest = new Card();
-            ClassUnderTest.SetMockData();
-        }
-
         [TestCase(CardConstants.Diamonds)]
         [TestCase(CardConstants.Spades)]
         [TestCase(CardConstants.Clubs)]
