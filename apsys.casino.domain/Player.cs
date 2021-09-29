@@ -1,9 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace apsys.casino.domain
 {
-    public class Player : ITesteable
+    public class Player : DomainObject, ITesteable
     {
         public string NickName { get; set; }
 
@@ -12,7 +11,7 @@ namespace apsys.casino.domain
             NickName = "pepe";
         }
 
-        public bool IsValid()
+        public override bool IsValid()
         {
             if (string.IsNullOrWhiteSpace(NickName))
                 return false;
